@@ -1,11 +1,16 @@
 //son las medidas de los ejes inicales x e y  de la ficha y la casilla nivel
-let x = 0;
-let y = 0;
+let x = 13;
+let x2 = 19;
+console.log(`el valor de x es igual a ${x})`)
+console.log(`el valor de x2 es igual a ${x2})`)
+let y = 8;
+let y2 = 12;
 const d = document;
 //accedo al dif que referencia a la casilla que esta la ficha
 export default function move(e, ficha, objeto_player, paragraph_class){
-x = objeto_player.ubX;
-y = objeto_player.ubY;
+ x = objeto_player.x;
+ y = objeto_player.y;
+console.log(`el valor de x recibido por primera vez es ${x})`)
 
     //en box guardo el contenido del parrafo que contiene el nivel de la ficha, el valor inicial es cero, luego se modifica su contenido textcontent cuando se mueva la ficha.
 const $box = d.querySelector(paragraph_class);
@@ -25,8 +30,8 @@ const level = d.getElementById($box_level);
         
     
     //guardo el centro del eje x e y de la ficha
-    const centerX = limit_ficha.left + (limit_ficha.width / 2);
-    const centerY = limit_ficha.top + (limit_ficha.height / 2);
+    const centerX = limit_ficha.left + (limit_ficha.width / 2);
+    const centerY = limit_ficha.top + (limit_ficha.height / 2);
     //asigno el valor de n como el contenido del parrafo, el valor inicial es 0. y lo  convierto  a entero, para poderlo sumar cuando mueva la ficha.
     let n = parseInt($box.textContent);
     //poner clase a cada casilla q pase la ficha.
@@ -53,9 +58,13 @@ const level = d.getElementById($box_level);
         case 39:
         e.preventDefault()
         if((centerX < limit_box.right) && ($box.textContent == 0 || $box.textContent == 1 || $box.textContent == "2" || $box.textContent == "3" || $box.textContent == "11" || $box.textContent == "12" || $box.textContent == "13")){
-            x++;
+            console.log(`el valor de x es igual a ${x})`)
+            console.log(`el valor de x2 es igual a ${x2})`)
+            x = x + 1 ;
         }else if((limit_ficha.right < limit_box.right) && ($box.textContent == "4")){  
-           x++; 
+            x = x + 1 ; 
+            console.log(`el valor de x es igual a {x})`)
+            console.log(`el valor de x2 es igual a {x2})`)
         }else if((centerX > limit_box.right) && ($box.textContent == "0" || $box.textContent == "1" || $box.textContent == "2" || $box.textContent == "3" || $box.textContent == "11" || $box.textContent == "12" || $box.textContent == "13" || $box.textContent == "14")){
             $box.textContent = n + 1;
         };
@@ -73,8 +82,16 @@ const level = d.getElementById($box_level);
         };
         break;
     }
-        $ficha.style.transform = `translate(${x*5}px,${y*5}px)`
+        // $ficha.style.transform = `translate(${x*5}px,${y*5}px)`
+        //$ficha.style.left = `${x*5}px`
+        x2 = x + 4
+        $ficha.style.gridColumn =  `${x} / ${x2}`;
+        y2 = y + 4
+        $ficha.style.gridRow =  `${y} / ${y2}`;
     }
+    console.log("la prueba");
+    console.log(y,y2)
     //la funcion retorna las coordenadas x   e y de la ficha, para que se guarden constantemente en la instancia del jugador.
+    console.log(`coordenadas x  e y : ${x} / ${y}, limitfichax ${limit_ficha.x}`)
     return [limit_ficha.x, limit_ficha.y, $ficha, x, y]
     }

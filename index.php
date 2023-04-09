@@ -14,7 +14,7 @@ $numberPlayer = 0;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carreteras</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@ $numberPlayer = 0;
   <article class="main">
     <!-- caja que contiene el panel del juego -->
     <div class="lane1">
-        <div id="0" class="circulo start">0</div>
+        <div id="0" class="circulo start"></div>
         <!-- div de las fichas -->
         <div class="ficha fichaa-uno">
             <img class="nick ficha" src="dir/img/nameGame.png?1m=<?php echo $today; ?>" alt="imagen de prueba">
@@ -31,20 +31,20 @@ $numberPlayer = 0;
             <img class="nick ficha" src="dir/img/nameGame_dos.png?1m=<?php echo $today; ?>" alt="imagen de prueba">
         </div>
         
-        <div id="1" class="cuadro uno">1</div>
-        <div id="2" class="cuadro dos">2</div>
-        <div id="3" class="cuadro tres">3</div>
-        <div id="4" class="cuadro cuatro">4</div>
-        <div id="5" class="cuadro cinco">5</div>
-        <div id="6" class="cuadro seis">6</div>
-        <div id="7" class="cuadro siete">7</div>
-        <div id="8" class="cuadro ocho">8</div>
-        <div id="9" class="cuadro nueve">9</div>
-        <div id="10" class="cuadro diez">10</div>
-        <div id="11" class="cuadro once">11</div>
-        <div id="12" class="cuadro doce">12</div>
-        <div id="13" class="cuadro trece">13</div>
-        <div id="14" class="circulo end">14</div>
+        <div id="1" class="cuadro uno"></div>
+        <div id="2" class="cuadro dos"></div>
+        <div id="3" class="cuadro tres"></div>
+        <div id="4" class="cuadro cuatro"></div>
+        <div id="5" class="cuadro cinco"></div>
+        <div id="6" class="cuadro seis"></div>
+        <div id="7" class="cuadro siete"></div>
+        <div id="8" class="cuadro ocho"></div>
+        <div id="9" class="cuadro nueve"></div>
+        <div id="10" class="cuadro diez"></div>
+        <div id="11" class="cuadro once"></div>
+        <div id="12" class="cuadro doce"></div>
+        <div id="13" class="cuadro trece"></div>
+        <div id="14" class="circulo end"></div>
         
     </div>
     <!-- contiene el panel izquierdo  de informacion del juego -->
@@ -57,44 +57,70 @@ $numberPlayer = 0;
     ?>
     <p ><?php $info_player; ?></p>
     <form action="player.php" enctype="multipart/form-data" method="POST">
-        <input type="text " name="name<?php echo $number;?>-game" placeholder="Nombre de jugador numero <?php echo $number; ?>">
-        <input type="file" name="picture<?php echo $number;?>" placeholder="Nombre">
-        
+        <input type="text " name="name <?php echo $number;?>-game" placeholder="Nombre de jugador numero <?php echo $number; ?>">
+        <input type="file" name="picture<?php echo $number;?>" placeholder="Nombre">      
     <?php
        };
        //si la variable session esta vacia, imprimo el formulario
-       if(empty($_SESSION["player"]["name1"])){
-           echo "<h2>Numero de jugadores</h2>";
-           echo "<p id='info_players'>$numberPlayer</p>";
+       if(empty($_SESSION["player"]["name1"])){;
+        ?>
+        <h2>Numero de jugadores</h2>
+        <p id='info_players'><?php echo $numberPlayer;?></p>
+      <?php
            for ($i=1; $i < 3 ; $i++) {
-               echo "<h2>Por favor escribe los datos del jugador numero $i:</h2>"; 
-               nick($i);
+             echo "<h2>Por favor escribe los datos del jugador numero $i:</h2>"; 
+             nick($i);
             }
             echo '<input type="submit" value="Enviar" />';
-      }else{
-          $numberPlayer = 2;
-          echo "<h2 class='h2_players'>Numero de jugadores</h2>";
+          }else{
+            $numberPlayer = 2;
+            echo "<div class='info_tittle'>";
+            echo "<h2 class='h2_players'>Numero de jugadores</h2>";
           echo "<p class='h2_players' id='info_players'>$numberPlayer</p>";
+            echo "</div>";
+          
           $nameGame_uno = $_SESSION["player"]["name1"];
           $nameGame_dos = $_SESSION["player"]["name2"];
           ?>
           <div class="player_uno box_info_player">
-              <h2 class='h2_player'>Player 1:</h2>
-               <p class="playersP jugadoresP_uno"><img class="nick_info" src="dir/img/nameGame.png" alt=""><?php echo $nameGame_uno; ?></p>
-               <p class="nivel nivelPlayerUno">0</p>
+             <div class="box_info_player-name">
+               <div class="box_nick">
+                 <img class="nick_info" src="dir/img/nameGame.png" alt="">
+                 <p class="playersP jugadoresP_uno"><?php echo $nameGame_uno; ?></p>
+               </div>
+             </div>
+             <div class="box_info_player-level">
+               <h2 class='h2_player'>Player 1:</h2>
+               <p>tu nivel es :<p class="nivel nivelPlayerUno">0</p></p>
+             </div>
           </div>
           <div class="player_uno box_info_player">
+            <div class="box_info_player-name">
+              <div class="box_nick">
+               <img class="nick_info" src="dir/img/nameGame_dos.png" alt="">
+               <p class="playersP jugadoresP_dos"><?php echo $nameGame_dos; ?></p>
+              </div>
+            </div>
+            <div class="box_info_player-level">
                <h2 class='h2_player'>Player 2:</h2>
-               <p class="playersP jugadoresP_dos"><img class="nick_info" src="dir/img/nameGame_dos.png" alt=""><?php echo $nameGame_dos; ?></p>
                <p>tu nivel es : <p class="nivel nivel_player_dos">0</p></p>
+            </div>
           </div>
       <div class="given">
+        <div>
           <h2 class="FichaPlay">Ficha:</h2>
           <p class="given__fichaj"></p>
+
+        </div>
+        <div>
           <h2 class="TurnoPlay">Turno:</h2>
           <p class="given__shift"></p>
+
+        </div>
+        <div>
           <form class="form__given" action="../../form-result.php">
-          <button class="button__given" type="submit">Player</button>
+            <button class="button__given" type="submit">Player</button>
+        </div>
           </form>
       </div>
       <?php
@@ -104,12 +130,10 @@ $numberPlayer = 0;
     </form>
   </div>
   </article>
-  <article class="form-game"> 
-  </article>
   <?php
    //unset($_SESSION["player"]["name1"]);
 ?>
-  <script src="empieza.js" type="module"></script>
+  <script src="start.js" type="module"></script>
 
 </body>
 

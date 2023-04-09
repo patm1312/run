@@ -4,14 +4,14 @@ html {
 
 body {
   margin: 0;
-  background-color: rgba(128, 128, 128, 0.261);
+  background-color: rgba(12, 156, 164, 0.438);
 }
 .run{
   box-shadow: -2px 2px 25px white
 }
 .main {
   border: 1px solid rgb(17, 55, 183);
-  /* display: flex; */
+  display: flex;
 }
 .box_data{
   width: 30%;
@@ -21,26 +21,39 @@ body {
   width: 70%;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
-  grid-template-rows:0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr ;
+  grid-template-columns: 
+  0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  
+  grid-template-rows:0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr;
 }
-
 .ficha{
-  width: 5vw;
+  width: 5vh;
   height: 5vh;
-  grid-column: 3 / 5;
-  grid-row: 2 / 4;
-  margin-right: auto;
-  margin-left: auto;
+  grid-column: 13 / 19;
+  grid-row: 8 / 12;
   margin-top: auto;
   margin-bottom: auto;
   background-color: #fff;
   border-radius: 20px;
   border: 1px solid black;
-  /* z-index: 40; */
+  z-index: 40;
+
+}
+fichaa-dos{
+  grid-column: 13 / 19;
+  grid-row: 8 / 12;
 }
 .box_info_player{
-  display: flex
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  align-items: center;
+  background-color: rgb(127, 163, 163);
+}
+.box_info_player-name{
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
 }
 .h2_players{
   font-size: 10px
@@ -48,16 +61,21 @@ body {
 .h2_player{
   font-size: 15px
 }
+.playersP{
+  margin: 0;
+}
 .nick{
   width: 100%;
   height: 100%;
   border-radius: 20px;
 }
 .nick_info{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  border-radius: 50%;
 }
-.given{
+given{
   display: flex
 }
 .circulo {
@@ -65,8 +83,8 @@ body {
   width: 80%;
   height: 80%;
   border-radius: 50%;
-  grid-column: 2 / 6;
-  grid-row: 1 / 5;
+  grid-column: 8 / 24;
+  grid-row: 4 / 20;
   margin-top: auto;
   margin-bottom: auto;
   margin-left: 15px;
@@ -74,8 +92,8 @@ body {
 }
 .end{
   background-color: rgb(241, 88, 88);
-  grid-column: 10 / 14;
-  grid-row: 9 / 13;
+  grid-column: 40 / 56;
+  grid-row: 36 / 52;
 }
 
 .cuadro {
@@ -85,76 +103,82 @@ body {
 
 .uno {
   background-color: rgb(126, 150, 255);
-  grid-column: 5 / 7;
-  grid-row: 2 / 4;
+  grid-column: 20 / 28;
+  grid-row: 8 / 16;
 }
 
 .dos {
   background-color: yellow;
-  grid-column: 7 / 9;
-  grid-row: 2 / 4;
+  grid-column: 28 / 36;
+  grid-row: 8 / 16;
 }
 
 .tres {
   background-color: lightgreen;
-  grid-column: 9 / 11;
-  grid-row: 2 / 4;
+  grid-column: 36 / 44;
+  grid-row: 8 / 16;
 }
 
 .cuatro {
   background-color: lightsalmon;
   border-top-right-radius: 50px;
-  grid-column: 11 /13;
-  grid-row: 2 / 4;
+  grid-column: 44 /52;
+  grid-row: 8 / 16;
 }
 .cinco {
   background-color: rgb(144, 208, 238);
-  grid-column: 11 / 13;
-  grid-row: 4 / 6;
+  grid-column: 44 / 52;
+  grid-row: 16 / 24;
 }
 .seis {
   border-bottom-right-radius: 50px;
   background-color: rgb(72, 121, 212);
-  grid-column: 11 / 13;
-  grid-row: 6 / 8;
+  grid-column: 44 / 52;
+  grid-row: 24 / 32;
 }
 .siete {
   background-color: rgb(163, 212, 72);
-  grid-column: 9 / 11;
-  grid-row: 6 / 8;
+  grid-column: 36 / 44;
+  grid-row: 24 / 32;
 }
 .ocho {
   background-color: rgb(212, 93, 72);
-  grid-column: 7 / 9;
-  grid-row: 6 / 8;
+  grid-column: 28 / 36;
+  grid-row: 24 / 32;
 }
 .nueve{
   border-top-left-radius: 50px;
   background-color: rgb(85, 192, 156);
-  grid-column: 5 / 7;
-  grid-row: 6 / 8;
+  grid-column: 20 / 28;
+  grid-row: 24 / 32;
 }
 .diez {
   background-color: rgb(244, 255, 92);
-  grid-column: 5 / 7;
-  grid-row: 8 / 10;
+  grid-column: 20 / 28;
+  grid-row: 32 / 40;
 }
 .once {
   border-bottom-left-radius: 50px;
   background-color: rgb(120, 124, 63);
-  grid-column: 5 / 7;
-  grid-row: 10 / 12;
+  grid-column: 20 / 28;
+  grid-row: 40 / 48;
 }
 .doce {
   background-color: rgb(217, 230, 43);
-  grid-column: 7 / 9;
-  grid-row: 10 / 12;
+  grid-column: 28 / 36;
+  grid-row: 40 / 48;
 }
 .trece{
   background-color: rgb(241, 88, 88);
-  grid-column: 9 / 11;
-  grid-row: 10 / 12;
+  grid-column: 36 / 44;
+  grid-row: 40 / 48;
   z-index: 20;
+}
+.info_tittle{
+  background-color: rgb(110, 177, 177);
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
 }
 /* .cinco {
   position: absolute;
@@ -188,6 +212,4 @@ body {
   border-radius: 50%;
   background-image: radial-gradient(gray 65px, transparent -4px 28px, transparent 32px), conic-gradient(green 68deg, transparent 65deg 186deg, transparent 196deg);
 } */
-.fichaa-dos{
-  transform: translate(50px);
-}
+

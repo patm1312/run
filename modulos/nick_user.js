@@ -1,4 +1,4 @@
-import move from "./mov.js";
+import move from "./move.js";
 export function nickk(){
    
     const d = document;
@@ -28,8 +28,8 @@ export function nickk(){
         }
     //instancias de los jugadores:
     //objeto  de los jugadores con nombre y nivel, coordenadas y  variable x para mover laficha
-    const $player_uno_obj = new Players($player_uno, $level_uno, 0, 0, 0, 0);
-    const $player_dos_obj = new Players($player_dos, $level_dos, 0, 0, 0, 0);
+    const $player_uno_obj = new Players($player_uno, $level_uno, 13, 8, 0, 0);
+    const $player_dos_obj = new Players($player_dos, $level_dos, 13, 8, 0, 0);
  
     //dado:
     class Given{
@@ -93,8 +93,8 @@ export function nickk(){
                             objeto_player.nivel = nivelJuego.textContent;
                         //me retorna las coordenadas x y y  del objeto
                         let coor = move(e,clase, objeto_player, paragraph_class);
-                        objeto_player.x = coor[0];
-                        objeto_player.y = coor[1];
+                        objeto_player.x = coor[3];
+                        objeto_player.y = coor[4];
                         objeto_player.ubX = coor[3];
                         objeto_player.ubY = coor[4];
                     }

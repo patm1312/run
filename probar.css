@@ -1,17 +1,19 @@
 
 .lane1{
+  position: relative;
   margin: 50px;;
-    background-color: #ff4c4c;
+    background-color: #70292988;
     width: 90%;
     border: 1px solid rgb(212, 84, 84);
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-rows:1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ; */
+    grid-template-areas: 'aquiMiCelda';
     height: auto;
-    position: relative;
+    
   }
 
-  .moved {
+  oved {
     transform: translate(10px); /* Equivalente a translateX(10px) */
     background-color: pink;
   }
@@ -21,19 +23,19 @@
     background-color: #62b5ea;
   }
   .es2 {
-    background-color: #9396c7;
-    position: absolute;
+    background-color: hsl(237, 32%, 68%);
     border: 2px solid black;
   }
-  .es3 {
-    grid-column: 5 / 6;
-    grid-row: 3 / 4;
-    background-color: #7eb5c5;
-  }
-
-  c{
+  
+  .c{
     width: 10%;
     height: 10vh;
+  }
+  .es3 {
+    color: beige;
+    grid-column: 1 / 2;
+    grid-row: 7 / 8;
+    background-color: #56673c;
   }
   .big{
     width: 200px;
@@ -51,6 +53,30 @@
   }
   .es2{
     left: 10vw;
+  }
+
+  .caja-8{
+    grid-area: 2 / 2 / span 3 / 4; 
+  }
+  .caja-8{
+    grid-area: aquiMiCelda;
+  }
+  .lane1{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+      "areauno areados"
+      "areatres areacuatro"
+      "areacinco areaseis"
+      "areasiete areaocho"
+      "areanueve areadiez";
+  }
+  .es1{
+    grid-area: areauno;
+  }
+  .es3{
+    grid-area: areanueve;
   }
   /* <?php
 session_start();
