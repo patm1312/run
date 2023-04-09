@@ -2,7 +2,9 @@
 session_start();
 $_SESSION["player"]["name1"] = $_POST['name1-game'];
 $_SESSION["player"]["name2"] = $_POST['name2-game'];
+echo "el nombre uno es : ";
 echo $_SESSION["player"]["name1"];
+echo "el nombre dos es : ";
 echo $_SESSION["player"]["name2"];
 echo " sirve";
 $archivo_uno = $_FILES['picture1'];
@@ -41,6 +43,6 @@ function copy_img($img,$pathh){
 copy_img($archivo_uno['tmp_name'], $nombre_archivo);
 copy_img($archivo_dos['tmp_name'], $nombre_archivo_dos);
 
-header("Location: inicio.php");
+header("Location: index.php");
 
 ?>
