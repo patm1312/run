@@ -14,7 +14,7 @@ $numberPlayer = 0;
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carreteras</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="xstyle.css">
 </head>
 
 <body>
@@ -133,7 +133,7 @@ $numberPlayer = 0;
   <?php
    //unset($_SESSION["player"]["name1"]);
 ?>
-  <script src="start.js" type="module"></script>
+  <script src="comienza.js" type="module"></script>
 
 </body>
 

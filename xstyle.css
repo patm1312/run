@@ -43,6 +43,10 @@ fichaa-dos{
   grid-column: 13 / 19;
   grid-row: 8 / 12;
 }
+prueba{
+  border: 5px solid black;
+  grid-column: 46 / 50
+}
 .box_info_player{
   display: flex;
   justify-content: space-around;
